@@ -1,0 +1,20 @@
+massiv = list()
+with open("text","r")as fayl:
+    for i in fayl:
+        if "bool" in i or "string" in i:
+            j = i.split()
+            for l in j:
+                l = l.split(";")
+                for k in l:
+                    k = k.split(",")
+                    massiv.append(k)
+print("bool turidagi o\'zgaruvchilar:")
+for i in range(len(massiv)):
+    if massiv[i][0] == "bool":
+        for j in massiv[i+1]:
+            print(j,end = "\n")
+print("string turidagi o\'zgaruvchilar:")
+for i in range(len(massiv)):
+    if massiv[i][0] == "string":
+        for j in massiv[i+1]:
+            print(j,end = "\n")
